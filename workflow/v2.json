@@ -1,0 +1,538 @@
+{
+  "workflowVersion": "0.1",
+  "contractVersion": "0.1",
+  "mode": "human_orchestrated",
+  "baseCommit": "ebdd62dfb133ebb08cb569a354cd42d50ca75072",
+  "deployment": "keep_v1",
+  "modules": [
+    {
+      "id": "M0",
+      "writes": [
+        "contracts"
+      ],
+      "reads": []
+    },
+    {
+      "id": "M1",
+      "writes": [
+        "world",
+        "observed"
+      ],
+      "reads": [
+        "contracts"
+      ]
+    },
+    {
+      "id": "M2",
+      "writes": [
+        "proposals"
+      ],
+      "reads": [
+        "observed",
+        "policy",
+        "contracts"
+      ]
+    },
+    {
+      "id": "M3",
+      "writes": [
+        "commitments",
+        "orders",
+        "ownership"
+      ],
+      "reads": [
+        "proposals",
+        "policy",
+        "capacity",
+        "ledgerProjection"
+      ]
+    },
+    {
+      "id": "M4",
+      "writes": [
+        "capacity",
+        "tasks"
+      ],
+      "reads": [
+        "commitments",
+        "policy"
+      ]
+    },
+    {
+      "id": "M5",
+      "writes": [
+        "ledger",
+        "reserves",
+        "inventoryCost"
+      ],
+      "reads": [
+        "businessEvents",
+        "policy"
+      ]
+    },
+    {
+      "id": "M6",
+      "writes": [
+        "policy",
+        "appeals"
+      ],
+      "reads": [
+        "authorizedEvidence"
+      ]
+    },
+    {
+      "id": "M7",
+      "writes": [
+        "reports"
+      ],
+      "reads": [
+        "world",
+        "observed",
+        "businessEvents",
+        "ledgerProjection"
+      ]
+    }
+  ],
+  "surfaces": [
+    {
+      "route": "/live",
+      "directWrites": [],
+      "commandBoundary": "application_coordinator"
+    },
+    {
+      "route": "/ops",
+      "directWrites": [],
+      "commandBoundary": "application_coordinator"
+    },
+    {
+      "route": "/partners",
+      "directWrites": [],
+      "commandBoundary": "application_coordinator"
+    },
+    {
+      "route": "/lab",
+      "directWrites": [],
+      "commandBoundary": "application_coordinator"
+    },
+    {
+      "route": "/",
+      "directWrites": [],
+      "commandBoundary": "none"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "C0",
+      "title": "公共契约设计",
+      "kind": "design",
+      "owner": "root",
+      "reviewer": "v2_agent_workflow",
+      "status": "accepted",
+      "dependsOn": [],
+      "contractVersion": "0.1",
+      "inputRefs": [
+        "docs/versions/v2-plan.md",
+        "docs/architecture/v2-contracts.md"
+      ],
+      "outputs": [
+        "docs/architecture/v2-system.md",
+        "docs/architecture/v2-contracts.md"
+      ],
+      "acceptance": [
+        "协议、角色和模块写入权经独立设计审查"
+      ],
+      "falsifier": "接口、数据或反例与承诺的性质冲突则退回",
+      "maxRevisions": 2,
+      "evidenceRefs": [
+        "docs/workflow/run-001.md"
+      ],
+      "reviewDecision": "accept",
+      "limits": [
+        "C0仅为设计接受；下游工作尚未实施"
+      ],
+      "reviewEvidenceRefs": [
+        "workflow/reviews/C0.json"
+      ],
+      "evidenceItems": []
+    },
+    {
+      "id": "D1",
+      "title": "城市数据与持续流入",
+      "kind": "work_package",
+      "owner": "D1-owner",
+      "reviewer": "D1-independent-reviewer",
+      "status": "queued",
+      "dependsOn": [
+        "C0"
+      ],
+      "contractVersion": "0.1",
+      "inputRefs": [
+        "docs/versions/v2-plan.md",
+        "docs/architecture/v2-contracts.md"
+      ],
+      "outputs": [],
+      "acceptance": [
+        "持续流入与退出压力测试分别定义",
+        "快照不读取未来真值且支持命名随机流",
+        "提供F06/F07可复现数据及窗口分母"
+      ],
+      "falsifier": "接口、数据或反例与承诺的性质冲突则退回",
+      "maxRevisions": 2,
+      "evidenceRefs": [],
+      "reviewDecision": "pending",
+      "limits": [
+        "未执行；owner/reviewer为待绑定的任务角色"
+      ],
+      "deliverableTypes": [
+        "world生成器设计/补丁",
+        "观察投影接口",
+        "场景和行为假设清单"
+      ],
+      "reviewEvidenceRefs": [],
+      "evidenceItems": []
+    },
+    {
+      "id": "A1",
+      "title": "可行匹配与预测",
+      "kind": "work_package",
+      "owner": "A1-owner",
+      "reviewer": "A1-independent-reviewer",
+      "status": "queued",
+      "dependsOn": [
+        "C0"
+      ],
+      "contractVersion": "0.1",
+      "inputRefs": [
+        "docs/versions/v2-plan.md",
+        "docs/architecture/v2-contracts.md"
+      ],
+      "outputs": [],
+      "acceptance": [
+        "F01/F02先筛全体可行候选再排序",
+        "算法只读取快照并输出带依据的建议",
+        "对照不要求预测必胜，保留失败案例"
+      ],
+      "falsifier": "接口、数据或反例与承诺的性质冲突则退回",
+      "maxRevisions": 2,
+      "evidenceRefs": [],
+      "reviewDecision": "pending",
+      "limits": [
+        "未执行；owner/reviewer为待绑定的任务角色"
+      ],
+      "deliverableTypes": [
+        "候选过滤/预测器补丁文本",
+        "最小反例",
+        "算法版本与解释规格"
+      ],
+      "reviewEvidenceRefs": [],
+      "evidenceItems": []
+    },
+    {
+      "id": "L1",
+      "title": "承诺执行与角色账务",
+      "kind": "work_package",
+      "owner": "L1-owner",
+      "reviewer": "L1-independent-reviewer",
+      "status": "queued",
+      "dependsOn": [
+        "C0"
+      ],
+      "contractVersion": "0.1",
+      "inputRefs": [
+        "docs/versions/v2-plan.md",
+        "docs/architecture/v2-contracts.md"
+      ],
+      "outputs": [],
+      "acceptance": [
+        "M3合同、M5记账保持独立写权",
+        "确认与资金/资源留存共同提交或共同失败",
+        "F03/F04/F08：幂等、现金桥、留存桥、库存成本桥"
+      ],
+      "falsifier": "接口、数据或反例与承诺的性质冲突则退回",
+      "maxRevisions": 2,
+      "evidenceRefs": [],
+      "reviewDecision": "pending",
+      "limits": [
+        "未执行；owner/reviewer为待绑定的任务角色"
+      ],
+      "deliverableTypes": [
+        "承诺执行器与账本接口",
+        "单件账及城市桥",
+        "失败注入与重复事件规格"
+      ],
+      "reviewEvidenceRefs": [],
+      "evidenceItems": []
+    },
+    {
+      "id": "S1",
+      "title": "服务商履约与排程",
+      "kind": "work_package",
+      "owner": "S1-owner",
+      "reviewer": "S1-independent-reviewer",
+      "status": "queued",
+      "dependsOn": [
+        "C0"
+      ],
+      "contractVersion": "0.1",
+      "inputRefs": [
+        "docs/versions/v2-plan.md",
+        "docs/architecture/v2-contracts.md"
+      ],
+      "outputs": [],
+      "acceptance": [
+        "公布容量、已留存窗口、实际消耗分开",
+        "拒单重排不撤销居民既有保障",
+        "同一任务失败和报酬责任可追溯"
+      ],
+      "falsifier": "接口、数据或反例与承诺的性质冲突则退回",
+      "maxRevisions": 2,
+      "evidenceRefs": [],
+      "reviewDecision": "pending",
+      "limits": [
+        "未执行；owner/reviewer为待绑定的任务角色"
+      ],
+      "deliverableTypes": [
+        "模拟服务适配器",
+        "状态机/容量规则",
+        "任务台fixture"
+      ],
+      "reviewEvidenceRefs": [],
+      "evidenceItems": []
+    },
+    {
+      "id": "G1",
+      "title": "共同治理规则",
+      "kind": "work_package",
+      "owner": "G1-owner",
+      "reviewer": "G1-independent-reviewer",
+      "status": "queued",
+      "dependsOn": [
+        "C0"
+      ],
+      "contractVersion": "0.1",
+      "inputRefs": [
+        "docs/versions/v2-plan.md",
+        "docs/architecture/v2-contracts.md"
+      ],
+      "outputs": [],
+      "acceptance": [
+        "费率/准入/报酬/申诉为版本化政策",
+        "运营者利益冲突回避",
+        "新规则不得追改已签合同F05"
+      ],
+      "falsifier": "接口、数据或反例与承诺的性质冲突则退回",
+      "maxRevisions": 2,
+      "evidenceRefs": [],
+      "reviewDecision": "pending",
+      "limits": [
+        "未执行；owner/reviewer为待绑定的任务角色"
+      ],
+      "deliverableTypes": [
+        "政策快照",
+        "角色治理权限表",
+        "争议与例外案例"
+      ],
+      "reviewEvidenceRefs": [],
+      "evidenceItems": []
+    },
+    {
+      "id": "U1",
+      "title": "五入口角色工作流",
+      "kind": "work_package",
+      "owner": "U1-owner",
+      "reviewer": "U1-independent-reviewer",
+      "status": "queued",
+      "dependsOn": [
+        "C0"
+      ],
+      "contractVersion": "0.1",
+      "inputRefs": [
+        "docs/versions/v2-plan.md",
+        "docs/architecture/v2-contracts.md"
+      ],
+      "outputs": [],
+      "acceptance": [
+        "5入口各有角色、待决定事项、受影响方",
+        "从购前选择到退出接手用同一case",
+        "共享事实但按角色投影，不在页面另算账"
+      ],
+      "falsifier": "接口、数据或反例与承诺的性质冲突则退回",
+      "maxRevisions": 2,
+      "evidenceRefs": [],
+      "reviewDecision": "pending",
+      "limits": [
+        "未执行；owner/reviewer为待绑定的任务角色"
+      ],
+      "deliverableTypes": [
+        "界面规格/组件补丁文本",
+        "同单流程图",
+        "空态/失败/取消文案"
+      ],
+      "reviewEvidenceRefs": [],
+      "evidenceItems": []
+    },
+    {
+      "id": "E1a",
+      "title": "实验预注册与行为假设设计",
+      "kind": "design",
+      "owner": "E1-owner",
+      "reviewer": "E1-independent-reviewer",
+      "status": "queued",
+      "dependsOn": [
+        "C0"
+      ],
+      "contractVersion": "0.1",
+      "inputRefs": [
+        "docs/versions/v2-plan.md",
+        "docs/architecture/v2-contracts.md"
+      ],
+      "outputs": [],
+      "acceptance": [
+        "预注册四组责任一致的配对实验",
+        "推荐采纳与保障购买分别定义",
+        "报告窗口分母、未完成责任和零/负结果",
+        "通过只解锁实施，不能支持产品效果主张"
+      ],
+      "falsifier": "接口、数据或反例与承诺的性质冲突则退回",
+      "maxRevisions": 2,
+      "evidenceRefs": [],
+      "reviewDecision": "pending",
+      "limits": [
+        "未执行；owner/reviewer为待绑定的任务角色",
+        "只接受实验设计，不接受mock运行作为真实实验完成"
+      ],
+      "deliverableTypes": [
+        "实验配置及差异表",
+        "指标定义",
+        "证据包和居民价值阈值规格"
+      ],
+      "reviewEvidenceRefs": [],
+      "evidenceItems": []
+    },
+    {
+      "id": "I1",
+      "title": "同一单端到端实施整合",
+      "kind": "work_package",
+      "owner": "I1-owner",
+      "reviewer": "I1-independent-reviewer",
+      "status": "queued",
+      "dependsOn": [
+        "D1",
+        "A1",
+        "L1",
+        "S1",
+        "G1",
+        "U1",
+        "E1a"
+      ],
+      "contractVersion": "0.1",
+      "inputRefs": [
+        "docs/versions/v2-plan.md",
+        "docs/architecture/v2-contracts.md"
+      ],
+      "outputs": [],
+      "acceptance": [
+        "主代理接入已审阅模块并替换mock依赖",
+        "完整净水设备案例及取消/容量冲击走通",
+        "运行时隔离/幂等/授权/原子性测试通过后才标完成"
+      ],
+      "falsifier": "接口、数据或反例与承诺的性质冲突则退回",
+      "maxRevisions": 2,
+      "evidenceRefs": [],
+      "reviewDecision": "pending",
+      "limits": [
+        "未执行；owner/reviewer为待绑定的任务角色"
+      ],
+      "deliverableTypes": [
+        "集成实现",
+        "真实模块端到端运行证据",
+        "角色体验验收"
+      ],
+      "reviewEvidenceRefs": [],
+      "evidenceItems": []
+    },
+    {
+      "id": "E1b",
+      "title": "真实模块配对实验运行与评估",
+      "kind": "verification",
+      "owner": "E1b-owner",
+      "reviewer": "E1b-independent-reviewer",
+      "status": "queued",
+      "dependsOn": [
+        "I1",
+        "E1a"
+      ],
+      "contractVersion": "0.1",
+      "inputRefs": [
+        "docs/versions/v2-plan.md",
+        "docs/architecture/v2-contracts.md"
+      ],
+      "outputs": [],
+      "acceptance": [
+        "集成的真实模块运行四组同责任对照",
+        "至少10个共同种子和组间配置差异",
+        "保存RunArtifact与配对结果，mock不满足验收"
+      ],
+      "falsifier": "接口、数据或反例与承诺的性质冲突则退回",
+      "maxRevisions": 2,
+      "evidenceRefs": [],
+      "reviewDecision": "pending",
+      "limits": [
+        "尚未运行；不接受mock成绩"
+      ],
+      "deliverableTypes": [
+        "版本锁定RunArtifact",
+        "共同种子清单",
+        "配置差异表与配对结果"
+      ],
+      "reviewEvidenceRefs": [],
+      "evidenceItems": [],
+      "requiredEvidenceTypes": [
+        "run_artifact",
+        "common_seeds",
+        "config_diff"
+      ]
+    },
+    {
+      "id": "P1",
+      "title": "验证结果与项目页主张",
+      "kind": "work_package",
+      "owner": "P1-owner",
+      "reviewer": "P1-independent-reviewer",
+      "status": "queued",
+      "dependsOn": [
+        "I1",
+        "E1b"
+      ],
+      "contractVersion": "0.1",
+      "inputRefs": [
+        "docs/versions/v2-plan.md",
+        "docs/architecture/v2-contracts.md"
+      ],
+      "outputs": [],
+      "acceptance": [
+        "项目页每项效果主张可追溯运行证据",
+        "v1与v2结果独立保存",
+        "范围和发布决定明确，未授权真实服务不执行"
+      ],
+      "falsifier": "接口、数据或反例与承诺的性质冲突则退回",
+      "maxRevisions": 2,
+      "evidenceRefs": [],
+      "reviewDecision": "pending",
+      "limits": [
+        "未执行；owner/reviewer为待绑定的任务角色"
+      ],
+      "deliverableTypes": [
+        "项目页实现/说明",
+        "v2验收与局限",
+        "发布判定记录"
+      ],
+      "reviewEvidenceRefs": [],
+      "evidenceItems": []
+    }
+  ],
+  "fixtureRefs": [
+    "workflow/fixtures/observed.json",
+    "workflow/fixtures/world.json"
+  ]
+}

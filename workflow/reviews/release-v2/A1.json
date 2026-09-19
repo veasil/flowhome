@@ -1,0 +1,17 @@
+{
+  "taskId": "A1",
+  "reviewer": "v2_independent_qa",
+  "agentTask": "/root/v2_independent_qa",
+  "decision": "accept",
+  "reviewedAt": "2026-09-18T19:11:22.167Z",
+  "scope": "Rule-based observed-data proposal engine only; no trained AI, resale prediction, or reality-calibrated advantage.",
+  "inputHashes": {
+    "public/downloads/v2/guide.md": "94131161ee1a03d736a03fb5de43ef3cb149ba7a626c68bac2f4b6ee6956b363",
+    "docs/workflow/implementation-scope.md": "f1d17a7e0247efca6046de0b864309647f33e6aed6072deff71d1d10bcdd3cb8",
+    "lib/flowhome-v2/engine/observed-v2.mjs": "a0811c588054cc8e2f11f02ba4180d86edd02bb5b9dfe0735201a2e33f7bee10",
+    "lib/flowhome-v2/engine/regression.mjs": "6d6d7c67c3d3156686ef4f04ca54d837989609444738cde2d5748bf4c0979348",
+    "docs/evidence/v2/engine-tests.txt": "d5f713bee7265d6f9047d526a8cb1409ccc21f884bf2cdc9031a7c03618f4154"
+  },
+  "evidence": "Accepted after independent source audit and 15-check engine rerun: all feasible asset/provider/window candidates are enumerated before ranking, F01/F02 pass, hidden/future fields are rejected, and unfavorable prediction effects remain allowed.",
+  "iterations": 3
+}

@@ -1,0 +1,23 @@
+{
+  "taskId": "E1b-city",
+  "reviewer": "v2_independent_qa",
+  "agentTask": "/root/v2_independent_qa",
+  "decision": "accept",
+  "reviewedAt": "2026-09-18T19:11:22.167Z",
+  "scope": "Synthetic city engine experiment only; not the production case workflow, empirical causal evidence, or the same fee schedule as the single-case demo.",
+  "inputHashes": {
+    "public/downloads/v2/guide.md": "94131161ee1a03d736a03fb5de43ef3cb149ba7a626c68bac2f4b6ee6956b363",
+    "docs/workflow/implementation-scope.md": "f1d17a7e0247efca6046de0b864309647f33e6aed6072deff71d1d10bcdd3cb8",
+    "public/downloads/v2/experiment.json": "318b897c0698d0a9bbbd038c66cef13ad1b9a238d98de41f90d25d577af40389",
+    "docs/evidence/v2/experiment-config.json": "d1c3344feac58389b8c8ea8f55d3c86a9d3608004f9ad3a4ba155e4184484e9f",
+    "scripts/reproduce-v2.mjs": "76253e7a36944f2bb087174541445eb46bcb54fb4322dbd72a6da5e722465cfa",
+    "lib/flowhome-v2/engine/index.mjs": "11eab889e9b7fc0b35bdb21dcecbbe3a33d69d4eb5f69d068a33896acd756cff",
+    "lib/flowhome-v2/engine/city-v2.mjs": "0f10e249b6f181169e06e1c3880a9894b7e385a3e306e6b051102c3f028374ed",
+    "lib/flowhome-v2/engine/world-v2.mjs": "045a155bea2ef11e55e0a1df1d65a470a21c293a942e136c76270f28a87351d6",
+    "lib/flowhome-v2/engine/observed-v2.mjs": "a0811c588054cc8e2f11f02ba4180d86edd02bb5b9dfe0735201a2e33f7bee10",
+    "lib/flowhome-v2/engine/experiment-v2.mjs": "689ed693b8075c5f86cfd5e0b145cbcaa824a51399239697b2b7d290b1c79054",
+    "docs/evidence/v2/engine-tests.txt": "d5f713bee7265d6f9047d526a8cb1409ccc21f884bf2cdc9031a7c03618f4154"
+  },
+  "evidence": "Accepted after independent full rerun and artifact comparison: 10 common seeds x 3 continuous-arrival scenarios x 4 arms = 120 runs; A/B and C/D share world fingerprints and all non-strategy settings; six paired result sets retain negative differences; all ledger bridges reconcile; report source SHA-256 values match current bytes.",
+  "iterations": 3
+}

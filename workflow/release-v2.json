@@ -1,0 +1,522 @@
+{
+  "workflowVersion": "0.3-market-research",
+  "contractVersion": "0.1",
+  "mode": "human_orchestrated",
+  "baseCommit": "06be09d7ef1045ff7d796f5ab96c7d22d70a0402",
+  "deployment": "publish_research_v2_keep_v1_route",
+  "modules": [
+    {
+      "id": "M0",
+      "writes": [
+        "contracts"
+      ],
+      "reads": []
+    },
+    {
+      "id": "M1",
+      "writes": [
+        "world",
+        "observed"
+      ],
+      "reads": [
+        "contracts"
+      ]
+    },
+    {
+      "id": "M2",
+      "writes": [
+        "proposals"
+      ],
+      "reads": [
+        "observed",
+        "policy",
+        "contracts"
+      ]
+    },
+    {
+      "id": "M3",
+      "writes": [
+        "commitments",
+        "orders",
+        "ownership"
+      ],
+      "reads": [
+        "proposals",
+        "policy",
+        "capacity",
+        "ledgerProjection"
+      ]
+    },
+    {
+      "id": "M4",
+      "writes": [
+        "capacity",
+        "tasks"
+      ],
+      "reads": [
+        "commitments",
+        "policy"
+      ]
+    },
+    {
+      "id": "M5",
+      "writes": [
+        "ledger",
+        "reserves",
+        "inventoryCost"
+      ],
+      "reads": [
+        "businessEvents",
+        "policy"
+      ]
+    },
+    {
+      "id": "M6",
+      "writes": [
+        "policy",
+        "appeals"
+      ],
+      "reads": [
+        "authorizedEvidence"
+      ]
+    },
+    {
+      "id": "M7",
+      "writes": [
+        "reports"
+      ],
+      "reads": [
+        "world",
+        "observed",
+        "businessEvents",
+        "ledgerProjection"
+      ]
+    }
+  ],
+  "surfaces": [
+    {
+      "route": "/live",
+      "directWrites": [],
+      "commandBoundary": "application_coordinator"
+    },
+    {
+      "route": "/ops",
+      "directWrites": [],
+      "commandBoundary": "application_coordinator"
+    },
+    {
+      "route": "/partners",
+      "directWrites": [],
+      "commandBoundary": "application_coordinator"
+    },
+    {
+      "route": "/lab",
+      "directWrites": [],
+      "commandBoundary": "application_coordinator"
+    },
+    {
+      "route": "/",
+      "directWrites": [],
+      "commandBoundary": "none"
+    }
+  ],
+  "tasks": [
+    {
+      "id": "D1",
+      "title": "连续城市与公开观察",
+      "kind": "verification",
+      "owner": "root",
+      "reviewer": "v2_independent_qa",
+      "status": "accepted",
+      "dependsOn": [],
+      "contractVersion": "0.1",
+      "inputRefs": [
+        "public/downloads/v2/guide.md"
+      ],
+      "outputs": [
+        "lib/flowhome-v2/engine/world-v2.mjs",
+        "lib/flowhome-v2/engine/city-v2.mjs"
+      ],
+      "acceptance": [
+        "持续流入与独立退出情景",
+        "两个真实世界未来不同但相同前缀观察与建议一致"
+      ],
+      "falsifier": "Counterexample, missing evidence or stronger public claim returns task to revision.",
+      "maxRevisions": 3,
+      "evidenceRefs": [
+        "docs/evidence/v2/engine-tests.txt"
+      ],
+      "reviewDecision": "accept",
+      "limits": [
+        "Simulated research MVP, not production transactions or empirically proven market advantage."
+      ],
+      "reviewEvidenceRefs": [
+        "workflow/reviews/release-v2/D1.json"
+      ],
+      "evidenceItems": []
+    },
+    {
+      "id": "A1",
+      "title": "可行性与规则预测",
+      "kind": "verification",
+      "owner": "root",
+      "reviewer": "v2_independent_qa",
+      "status": "accepted",
+      "dependsOn": [],
+      "contractVersion": "0.1",
+      "inputRefs": [
+        "public/downloads/v2/guide.md"
+      ],
+      "outputs": [
+        "lib/flowhome-v2/engine/observed-v2.mjs"
+      ],
+      "acceptance": [
+        "先全量可行筛选，后排序，服务商回退",
+        "不读取隐藏真值，不要求预测必胜"
+      ],
+      "falsifier": "Counterexample, missing evidence or stronger public claim returns task to revision.",
+      "maxRevisions": 3,
+      "evidenceRefs": [
+        "docs/evidence/v2/engine-tests.txt"
+      ],
+      "reviewDecision": "accept",
+      "limits": [
+        "Simulated research MVP, not production transactions or empirically proven market advantage."
+      ],
+      "reviewEvidenceRefs": [
+        "workflow/reviews/release-v2/A1.json"
+      ],
+      "evidenceItems": []
+    },
+    {
+      "id": "L1a",
+      "title": "模拟承诺与分币账本",
+      "kind": "verification",
+      "owner": "root",
+      "reviewer": "v2_independent_qa",
+      "status": "accepted",
+      "dependsOn": [],
+      "contractVersion": "0.1",
+      "inputRefs": [
+        "public/downloads/v2/guide.md"
+      ],
+      "outputs": [
+        "lib/flowhome-v2/domain/domain.mjs",
+        "lib/flowhome-v2/domain/ledger.mjs"
+      ],
+      "acceptance": [
+        "确认与资金留存同事务（不含真实容量预约）",
+        "幂等、版本冲突、现金留存库存结果桥、净支出"
+      ],
+      "falsifier": "Counterexample, missing evidence or stronger public claim returns task to revision.",
+      "maxRevisions": 3,
+      "evidenceRefs": [
+        "docs/evidence/v2/domain-tests.txt"
+      ],
+      "reviewDecision": "accept",
+      "limits": [
+        "Simulated research MVP, not production transactions or empirically proven market advantage."
+      ],
+      "reviewEvidenceRefs": [
+        "workflow/reviews/release-v2/L1a.json"
+      ],
+      "evidenceItems": []
+    },
+    {
+      "id": "S1a",
+      "title": "模拟服务履约状态",
+      "kind": "verification",
+      "owner": "root",
+      "reviewer": "navigation_review",
+      "status": "accepted",
+      "dependsOn": [],
+      "contractVersion": "0.1",
+      "inputRefs": [
+        "public/downloads/v2/guide.md"
+      ],
+      "outputs": [
+        "lib/flowhome-v2/domain/fulfillment.mjs",
+        "app/(workspaces)/partners/page.tsx"
+      ],
+      "acceptance": [
+        "拒单转其他可操作服务商",
+        "失败后追加留存复检，重复报告不重复支付",
+        "不声称真实排班或容量原子预约"
+      ],
+      "falsifier": "Counterexample, missing evidence or stronger public claim returns task to revision.",
+      "maxRevisions": 3,
+      "evidenceRefs": [
+        "docs/evidence/v2/domain-tests.txt",
+        "docs/evidence/v2/navigation-hotfix.md",
+        "docs/evidence/v3/market-research.md"
+      ],
+      "reviewDecision": "accept",
+      "limits": [
+        "Simulated research MVP, not production transactions or empirically proven market advantage."
+      ],
+      "reviewEvidenceRefs": [
+        "workflow/reviews/market-research/S1a.json"
+      ],
+      "evidenceItems": []
+    },
+    {
+      "id": "G1a",
+      "title": "政策快照与独立申诉",
+      "kind": "verification",
+      "owner": "root",
+      "reviewer": "navigation_review",
+      "status": "accepted",
+      "dependsOn": [],
+      "contractVersion": "0.1",
+      "inputRefs": [
+        "public/downloads/v2/guide.md"
+      ],
+      "outputs": [
+        "lib/flowhome-v2/domain/policy.mjs",
+        "app/(workspaces)/ops/page.tsx"
+      ],
+      "acceptance": [
+        "已有合同冻结、申诉利益回避",
+        "明确未实现真实组织投票或完整政策授权"
+      ],
+      "falsifier": "Counterexample, missing evidence or stronger public claim returns task to revision.",
+      "maxRevisions": 3,
+      "evidenceRefs": [
+        "docs/evidence/v2/domain-tests.txt",
+        "docs/evidence/v2/navigation-hotfix.md",
+        "docs/evidence/v3/market-research.md"
+      ],
+      "reviewDecision": "accept",
+      "limits": [
+        "Simulated research MVP, not production transactions or empirically proven market advantage."
+      ],
+      "reviewEvidenceRefs": [
+        "workflow/reviews/market-research/G1a.json"
+      ],
+      "evidenceItems": []
+    },
+    {
+      "id": "U1",
+      "title": "五入口共享案例",
+      "kind": "verification",
+      "owner": "root",
+      "reviewer": "navigation_review",
+      "status": "accepted",
+      "dependsOn": [],
+      "contractVersion": "0.1",
+      "inputRefs": [
+        "public/downloads/v2/guide.md"
+      ],
+      "outputs": [
+        "app/page.tsx",
+        "app/(workspaces)/live/page.tsx",
+        "app/(workspaces)/ops/page.tsx",
+        "app/(workspaces)/partners/page.tsx",
+        "app/(workspaces)/lab/page.tsx",
+        "components/flowhome-v2/context.tsx",
+        "app/v2.css"
+      ],
+      "acceptance": [
+        "选择-确认-退出-检测-接手-交付同一案例",
+        "账户/角色/模拟边界清楚",
+        "浏览器交互与移动布局通过"
+      ],
+      "falsifier": "Counterexample, missing evidence or stronger public claim returns task to revision.",
+      "maxRevisions": 3,
+      "evidenceRefs": [
+        "docs/evidence/v2/browser-qa.md",
+        "docs/evidence/v2/navigation-hotfix.md",
+        "docs/evidence/v3/market-research.md"
+      ],
+      "reviewDecision": "accept",
+      "limits": [
+        "Simulated research MVP, not production transactions or empirically proven market advantage."
+      ],
+      "reviewEvidenceRefs": [
+        "workflow/reviews/market-research/U1.json"
+      ],
+      "evidenceItems": []
+    },
+    {
+      "id": "E1b-city",
+      "title": "城市引擎120次真实运行",
+      "kind": "verification",
+      "owner": "root",
+      "reviewer": "v2_independent_qa",
+      "status": "accepted",
+      "dependsOn": [
+        "D1",
+        "A1"
+      ],
+      "contractVersion": "0.1",
+      "inputRefs": [
+        "public/downloads/v2/guide.md"
+      ],
+      "outputs": [
+        "public/downloads/v2/experiment.json",
+        "docs/evidence/v2/experiment-config.json",
+        "scripts/reproduce-v2.mjs"
+      ],
+      "acceptance": [
+        "10共同种子，4组，3情景，共120真实运行",
+        "保存源文件SHA256、逐run provenance、负向结果",
+        "不宣称城市引擎等于生产履约或单案例同费率"
+      ],
+      "falsifier": "Counterexample, missing evidence or stronger public claim returns task to revision.",
+      "maxRevisions": 3,
+      "evidenceRefs": [
+        "docs/evidence/v2/engine-tests.txt"
+      ],
+      "reviewDecision": "accept",
+      "limits": [
+        "Simulated research MVP, not production transactions or empirically proven market advantage."
+      ],
+      "reviewEvidenceRefs": [
+        "workflow/reviews/release-v2/E1b-city.json"
+      ],
+      "evidenceItems": [
+        {
+          "kind": "run_artifact",
+          "path": "public/downloads/v2/experiment.json"
+        },
+        {
+          "kind": "common_seeds",
+          "path": "docs/evidence/v2/experiment-config.json"
+        },
+        {
+          "kind": "config_diff",
+          "path": "docs/evidence/v2/experiment-config.json"
+        }
+      ],
+      "requiredEvidenceTypes": [
+        "run_artifact",
+        "common_seeds",
+        "config_diff"
+      ]
+    },
+    {
+      "id": "P0",
+      "title": "研究原型发布与证据",
+      "kind": "verification",
+      "owner": "root",
+      "reviewer": "v2_independent_qa",
+      "status": "accepted",
+      "dependsOn": [
+        "D1",
+        "A1",
+        "L1a",
+        "S1a",
+        "G1a",
+        "U1",
+        "E1b-city"
+      ],
+      "contractVersion": "0.1",
+      "inputRefs": [
+        "public/downloads/v2/guide.md"
+      ],
+      "outputs": [
+        "public/downloads/v2/guide.md",
+        "public/downloads/v2/acceptance.md",
+        "docs/workflow/run-002.md",
+        "docs/workflow/implementation-scope.md",
+        "scripts/check-v2-release.mjs"
+      ],
+      "acceptance": [
+        "品牌故事及模块范围对应实际实现",
+        "原始完整目标不伪标完成",
+        "发布保留v1"
+      ],
+      "falsifier": "Counterexample, missing evidence or stronger public claim returns task to revision.",
+      "maxRevisions": 3,
+      "evidenceRefs": [
+        "docs/evidence/v2/browser-qa.md"
+      ],
+      "reviewDecision": "accept",
+      "limits": [
+        "Simulated research MVP, not production transactions or empirically proven market advantage."
+      ],
+      "reviewEvidenceRefs": [
+        "workflow/reviews/release-v2/P0.json"
+      ],
+      "evidenceItems": []
+    },
+    {
+      "id": "MARKET",
+      "title": "多案例共享市场与预约关系",
+      "kind": "verification",
+      "owner": "root",
+      "reviewer": "navigation_review",
+      "status": "accepted",
+      "dependsOn": [
+        "L1a"
+      ],
+      "contractVersion": "0.1",
+      "inputRefs": [
+        "public/downloads/market-research.md"
+      ],
+      "outputs": [
+        "lib/flowhome-v2/market.mjs",
+        "components/flowhome-v2/market-panel.tsx"
+      ],
+      "acceptance": [
+        "12/24/18 可复现案例集，共享期初资金不重复",
+        "跨案例预约、取消、实际交付关联与重复需求排除"
+      ],
+      "falsifier": "Counterexample or unsupported claim reopens this task.",
+      "maxRevisions": 3,
+      "evidenceRefs": [
+        "docs/evidence/v3/market-research.md"
+      ],
+      "reviewDecision": "accept",
+      "limits": [
+        "Browser-local synthetic research prototype; no real users, payment, trained AI or geographic transport model."
+      ],
+      "reviewEvidenceRefs": [
+        "workflow/reviews/market-research/MARKET.json"
+      ],
+      "evidenceItems": []
+    },
+    {
+      "id": "RESEARCH",
+      "title": "数据版本登记与只读城市研究界面",
+      "kind": "verification",
+      "owner": "root",
+      "reviewer": "navigation_review",
+      "status": "accepted",
+      "dependsOn": [
+        "D1",
+        "A1"
+      ],
+      "contractVersion": "0.1",
+      "inputRefs": [
+        "public/downloads/market-research.md"
+      ],
+      "outputs": [
+        "lib/flowhome-v2/research-data.mjs",
+        "components/flowhome-v2/research-surface.tsx"
+      ],
+      "acceptance": [
+        "实际 mock 输入/输出计数，真实数据为零",
+        "调参结果与旧报告配置分开，品类和时间回放对应计算结果"
+      ],
+      "falsifier": "Counterexample or unsupported claim reopens this task.",
+      "maxRevisions": 3,
+      "evidenceRefs": [
+        "docs/evidence/v3/market-research.md"
+      ],
+      "reviewDecision": "accept",
+      "limits": [
+        "Browser-local synthetic research prototype; no real users, payment, trained AI or geographic transport model."
+      ],
+      "reviewEvidenceRefs": [
+        "workflow/reviews/market-research/RESEARCH.json"
+      ],
+      "evidenceItems": []
+    }
+  ],
+  "fixtureRefs": [
+    "workflow/fixtures/observed.json",
+    "workflow/fixtures/world.json"
+  ],
+  "scope": "Scoped market/research increment; unchanged engine acceptance retained. Original complete-system roadmap in workflow/v2.json remains uncompleted."
+}

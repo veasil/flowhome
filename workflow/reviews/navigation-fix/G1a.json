@@ -1,0 +1,24 @@
+{
+  "taskId": "G1a",
+  "reviewer": "navigation_review",
+  "agentTask": "/root/navigation_review",
+  "decision": "accept",
+  "reviewedAt": "2026-09-19T00:23:16.578965+00:00",
+  "scope": "Navigation compatibility hotfix delta only. Policy snapshot and simulated appeal-recusal behavior only; no member authorization, quorum, voting, legal governance, or production identity.",
+  "inputHashes": {
+    "public/downloads/v2/guide.md": "94131161ee1a03d736a03fb5de43ef3cb149ba7a626c68bac2f4b6ee6956b363",
+    "docs/workflow/implementation-scope.md": "f1d17a7e0247efca6046de0b864309647f33e6aed6072deff71d1d10bcdd3cb8",
+    "lib/flowhome-v2/domain/policy.mjs": "ed5c00ee8957bb2f5f9a872517a221efe74acaa9657be83b15c40f6a67376fd0",
+    "lib/flowhome-v2/domain/domain.mjs": "be5987f1a299bd38cac41cf68e281d8c21902d4f7e6a4efb76594702f2ee777b",
+    "lib/flowhome-v2/domain/domain.test.mjs": "46a5e35071ac48aaea7d0c1a8321e459f2bcdce7c8f356ec2f6f6de88f5e5456",
+    "app/(workspaces)/ops/page.tsx": "6603ca9bd2d47e2a81663456d89c45f44dd87469eca0fd954b25b7c8ab73eadb",
+    "docs/evidence/v2/domain-tests.txt": "9c1ad30a1e32b0a162f743a816cea4fa879b2b9767483bf1212fb8c9133efd03",
+    "components/flowhome-v2/nav.tsx": "d1f9b809d3151169ae292481d1351426d98660f76433f74211b4b5ac17fc51a6",
+    "components/flowhome-v2/context.tsx": "2643dbe502a9528944b3fdba82b52698de168bca47e1454ba5eb901809f6c909",
+    "app/(workspaces)/layout.tsx": "7c162c7836e3850310fe2d8a0bef13a2ce875e61cf1c23d2c574d7ac93799dc6",
+    "docs/evidence/v2/navigation-hotfix.md": "ee7407a0266222172072fc5f07eb087255ef8977f27c70026b617c8ef5a6790b",
+    "workflow/reviews/release-v2/G1a.json": "adead8bca8d873638cc49c283b6e6fd5f061149e4a3336b82946032348ed8e5c"
+  },
+  "evidence": "Operations route delta only replaces route Links with native anchors; policy and appeal logic is unchanged and existing domain evidence hashes match the historical review. Independently inspected the frozen source delta and verified unchanged baseline input/evidence hashes. Reviewed root browser record in docs/evidence/v2/navigation-hotfix.md: home→live→ops→partners→lab→home, restored case, and immediate offer-selection→operations state retention; TypeScript and build reported passing. This reviewer did not operate a browser or rerun those checks. Historical full-flow/test evidence is retained, not represented as newly rerun. Original iPhone failure cause and device-specific repair remain unverified; document navigation intentionally resets page-local controls.",
+  "iterations": 4
+}

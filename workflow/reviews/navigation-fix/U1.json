@@ -1,0 +1,28 @@
+{
+  "taskId": "U1",
+  "reviewer": "navigation_review",
+  "agentTask": "/root/navigation_review",
+  "decision": "accept",
+  "reviewedAt": "2026-09-19T00:23:16.579649+00:00",
+  "scope": "Navigation compatibility hotfix delta only. Five-entry browser-local research prototype; browser evidence was produced by root and reviewed here, not independently re-clicked by this reviewer. No production auth, payment, cross-device state, or full accessibility certification.",
+  "inputHashes": {
+    "public/downloads/v2/guide.md": "94131161ee1a03d736a03fb5de43ef3cb149ba7a626c68bac2f4b6ee6956b363",
+    "docs/workflow/implementation-scope.md": "f1d17a7e0247efca6046de0b864309647f33e6aed6072deff71d1d10bcdd3cb8",
+    "app/page.tsx": "7dec2bd5e36234ba22e690b1296d2ed5427ccc28934e0807a2236ac7f0c43c13",
+    "app/(workspaces)/live/page.tsx": "c98433e01a879a9f2915f64f914d6a9204c0b2fdda7b0b729e40c76984197396",
+    "app/(workspaces)/ops/page.tsx": "6603ca9bd2d47e2a81663456d89c45f44dd87469eca0fd954b25b7c8ab73eadb",
+    "app/(workspaces)/partners/page.tsx": "b5a571ed32e5ad87f6da06e1cbfd2d691ecc4943c0de5e5c85891acd494f3560",
+    "app/(workspaces)/lab/page.tsx": "b38a9640a6de8eeaa6fb1bbbc3e138ec3661338a954134274d329f58a6c87f18",
+    "components/flowhome-v2/context.tsx": "2643dbe502a9528944b3fdba82b52698de168bca47e1454ba5eb901809f6c909",
+    "app/v2.css": "d570c82241ced1d72991f46a5e5d58d4017ddc56592409f2de6fd460cbd1f012",
+    "docs/evidence/v2/browser-qa.md": "1c5bb5b555f04679cff8685fa651665676a4d50248c73f61cebde2b1c5e65d72",
+    "docs/evidence/v2/domain-tests.txt": "9c1ad30a1e32b0a162f743a816cea4fa879b2b9767483bf1212fb8c9133efd03",
+    "docs/evidence/v2/engine-tests.txt": "d5f713bee7265d6f9047d526a8cb1409ccc21f884bf2cdc9031a7c03618f4154",
+    "components/flowhome-v2/nav.tsx": "d1f9b809d3151169ae292481d1351426d98660f76433f74211b4b5ac17fc51a6",
+    "app/(workspaces)/layout.tsx": "7c162c7836e3850310fe2d8a0bef13a2ce875e61cf1c23d2c574d7ac93799dc6",
+    "docs/evidence/v2/navigation-hotfix.md": "ee7407a0266222172072fc5f07eb087255ef8977f27c70026b617c8ef5a6790b",
+    "workflow/reviews/release-v2/U1.json": "4b2dc5be6e8dfe5b95137ddc50ea0f29f09aff864cff8f35eb01910f9d4de272"
+  },
+  "evidence": "All V2 route Links are native anchors. Successful mutations and resets save synchronously before state updates, storage failure rejects mutation with a visible notice, and restoration guards prevent early mutations. Active route semantics are exposed via aria-current. Independently inspected the frozen source delta and verified unchanged baseline input/evidence hashes. Reviewed root browser record in docs/evidence/v2/navigation-hotfix.md: home→live→ops→partners→lab→home, restored case, and immediate offer-selection→operations state retention; TypeScript and build reported passing. This reviewer did not operate a browser or rerun those checks. Historical full-flow/test evidence is retained, not represented as newly rerun. Original iPhone failure cause and device-specific repair remain unverified; document navigation intentionally resets page-local controls.",
+  "iterations": 4
+}

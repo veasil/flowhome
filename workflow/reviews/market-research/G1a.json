@@ -1,0 +1,41 @@
+{
+  "taskId": "G1a",
+  "reviewer": "navigation_review",
+  "agentTask": "/root/navigation_review",
+  "decision": "accept",
+  "reviewedAt": "2026-09-19T00:56:31.518065+00:00",
+  "scope": "Refresh of historical policy snapshot and appeal-recusal scope under selected-case market dispatch. Domain policy and governance files are unchanged; policies and appeals remain per-case simulation, not a market-wide governance system. No production identity, quorum or voting.",
+  "inputHashes": {
+    "public/downloads/market-research.md": "ca8b969364dea2ae919704047dcf5b3294bc427b7e079b11c87b2059c1b87345",
+    "docs/evidence/v3/market-research.md": "2e90e5779099ad72fced864a7d1bf6e7dd305e63d10475e4fefcc65840b0370f",
+    "components/flowhome-v2/context.tsx": "55c0018e582ed972bf742769e1ec2018ee0c349053e033accf2adf9894e370c5",
+    "components/flowhome-v2/nav.tsx": "d1f9b809d3151169ae292481d1351426d98660f76433f74211b4b5ac17fc51a6",
+    "components/flowhome-v2/format.ts": "a7ed10233feafe58e7e4387c65b38f795b5c36b2afd05547b4b793ff94e1e3d1",
+    "components/flowhome-v2/market-panel.tsx": "63ea2331e10dcfde655dfd060187c9a928226f2187547562a7251466b405ccb4",
+    "lib/flowhome-v2/market.mjs": "b0ade6a79fa3385ce25d351f2c6f1fa2587ac8e70f16015e0eec2af9b4469110",
+    "lib/flowhome-v2/market.test.mjs": "e39909f45ba098e3b126b6849d77e9a271807fc505dbc52d19e3d69c1f3f3401",
+    "app/(workspaces)/layout.tsx": "7c162c7836e3850310fe2d8a0bef13a2ce875e61cf1c23d2c574d7ac93799dc6",
+    "app/(workspaces)/live/page.tsx": "a4f6778073baa86bf3e981ea904be48ca4193cf2d58d8eba066546dbfafbfc07",
+    "app/(workspaces)/ops/page.tsx": "7d61361472f82d8208be8a179ae621a4e5b7b0628603a5c510f9cf5c7fa081b8",
+    "app/(workspaces)/partners/page.tsx": "02869530651988683338c97b11d99c1065651c53a69a86ac87b2bc4757f7e0f0",
+    "app/v2.css": "3112082f8f71c33a9fd0591e26820b7a38d8a9ebf18c3223ab5108f63e5454b0",
+    "lib/flowhome-v2/domain/domain.mjs": "be5987f1a299bd38cac41cf68e281d8c21902d4f7e6a4efb76594702f2ee777b",
+    "lib/flowhome-v2/domain/domain.test.mjs": "46a5e35071ac48aaea7d0c1a8321e459f2bcdce7c8f356ec2f6f6de88f5e5456",
+    "lib/flowhome-v2/domain/fulfillment.mjs": "4cac33242df73d332598d4e703c6f932659b4110ff63ec60f68dcb33ce192c82",
+    "lib/flowhome-v2/domain/ledger.mjs": "96dda9ccc10689a4289644fff0a2173e4cb042021f82169e966a07840fc9b098",
+    "lib/flowhome-v2/domain/policy.mjs": "ed5c00ee8957bb2f5f9a872517a221efe74acaa9657be83b15c40f6a67376fd0",
+    "public/downloads/v2/guide.md": "94131161ee1a03d736a03fb5de43ef3cb149ba7a626c68bac2f4b6ee6956b363",
+    "docs/workflow/implementation-scope.md": "f1d17a7e0247efca6046de0b864309647f33e6aed6072deff71d1d10bcdd3cb8",
+    "docs/evidence/v2/domain-tests.txt": "9c1ad30a1e32b0a162f743a816cea4fa879b2b9767483bf1212fb8c9133efd03",
+    "workflow/reviews/release-v2/G1a.json": "adead8bca8d873638cc49c283b6e6fd5f061149e4a3336b82946032348ed8e5c",
+    "workflow/reviews/navigation-fix/G1a.json": "2df12065e8a219b401f91f3478592d9085a18abee48b411de1d5b2a3f3310a57"
+  },
+  "evidence": "Independent reviewer reran six market tests and the research adapter reconciliation suite successfully (7 Node test entries). Independently exercised total-cost budget rejection, matched-demand offer exclusion and conflicting reservation retry; all passed. Root records 42 broader checks plus TypeScript and final production build; reviewer did not rerun the full set, TypeScript or build. Browser evidence was produced by root and read by this reviewer; this reviewer did not operate any browser. Root recorded 12-case booking/cancellation/rebooking/partner acceptance/delivery, moving24 persistence across native navigation, and city capital 70000 versus retained paired-report capital 60000. No new mobile-device, original iPhone-session or live-production-browser verification is claimed. Historical release and navigation-fix reviews are preserved and hashed. Unchanged historical domain and original evidence hashes were verified; acceptance carries their limited baseline scope forward with this reviewed delta, not a newly rerun historical end-to-end/mobile certification.",
+  "iterations": 5,
+  "summary": "Refresh of historical policy snapshot and appeal-recusal scope under selected-case market dispatch. Domain policy and governance files are unchanged; policies and appeals remain per-case simulation, not a market-wide governance system. No production identity, quorum or voting.",
+  "limitations": [
+    "Synthetic browser-local research prototype only.",
+    "Browser interactions and final build evidence attributed to root, not independently performed by this reviewer.",
+    "Transaction records for cross-case links reside in the supply case; no separate real resident identity or double-entry household account is implied."
+  ]
+}

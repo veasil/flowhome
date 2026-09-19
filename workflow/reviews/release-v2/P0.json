@@ -1,0 +1,22 @@
+{
+  "taskId": "P0",
+  "reviewer": "v2_independent_qa",
+  "agentTask": "/root/v2_independent_qa",
+  "decision": "accept",
+  "reviewedAt": "2026-09-18T19:11:22.167Z",
+  "scope": "Research MVP release candidate and claim/evidence package; live production deployment itself was not reviewed. Original full workflow remains incomplete and v1 remains routed separately.",
+  "inputHashes": {
+    "public/downloads/v2/guide.md": "94131161ee1a03d736a03fb5de43ef3cb149ba7a626c68bac2f4b6ee6956b363",
+    "public/downloads/v2/acceptance.md": "d85e9cd6a17d12aeb70ee5f052052358ed6681bb31e35349c30585bd7a02c393",
+    "docs/workflow/run-002.md": "d4b77dc621fc81af3e23f56979de59dd985d6bb1d4365e13f569e2ca7d26cc65",
+    "docs/workflow/implementation-scope.md": "f1d17a7e0247efca6046de0b864309647f33e6aed6072deff71d1d10bcdd3cb8",
+    "scripts/check-v2-release.mjs": "fd0a78982b3066f27776be4b5a6bf50f90aa29183ad71e454f4db38b85240550",
+    "docs/evidence/v2/domain-tests.txt": "9c1ad30a1e32b0a162f743a816cea4fa879b2b9767483bf1212fb8c9133efd03",
+    "docs/evidence/v2/engine-tests.txt": "d5f713bee7265d6f9047d526a8cb1409ccc21f884bf2cdc9031a7c03618f4154",
+    "docs/evidence/v2/workflow-tests.txt": "7c8adc94af54c0775b1ebf0a3c554a5793c152132d418c49031fc9feb44f05dc",
+    "docs/evidence/v2/browser-qa.md": "1c5bb5b555f04679cff8685fa651665676a4d50248c73f61cebde2b1c5e65d72",
+    "public/downloads/v2/experiment.json": "318b897c0698d0a9bbbd038c66cef13ad1b9a238d98de41f90d25d577af40389"
+  },
+  "evidence": "Accepted as a publishable research-MVP candidate after claims-to-code audit: limitations explicitly exclude real payments, auth, capacity booking, voting, calibrated AI and market proof; v1 route is present; build/TypeScript and recorded browser path pass; lint-clean and WebMCP execution are disclosed as unavailable/not passed. Publication/version identifiers remain a post-decision release record.",
+  "iterations": 3
+}

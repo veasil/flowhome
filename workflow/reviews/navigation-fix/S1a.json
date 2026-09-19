@@ -1,0 +1,25 @@
+{
+  "taskId": "S1a",
+  "reviewer": "navigation_review",
+  "agentTask": "/root/navigation_review",
+  "decision": "accept",
+  "reviewedAt": "2026-09-19T00:23:16.578393+00:00",
+  "scope": "Navigation compatibility hotfix delta only. Single-case simulated task state and compensation trace only; no real provider connection, calendar, capacity publication, or atomic slot reservation.",
+  "inputHashes": {
+    "public/downloads/v2/guide.md": "94131161ee1a03d736a03fb5de43ef3cb149ba7a626c68bac2f4b6ee6956b363",
+    "docs/workflow/implementation-scope.md": "f1d17a7e0247efca6046de0b864309647f33e6aed6072deff71d1d10bcdd3cb8",
+    "lib/flowhome-v2/domain/fulfillment.mjs": "4cac33242df73d332598d4e703c6f932659b4110ff63ec60f68dcb33ce192c82",
+    "lib/flowhome-v2/domain/domain.mjs": "be5987f1a299bd38cac41cf68e281d8c21902d4f7e6a4efb76594702f2ee777b",
+    "lib/flowhome-v2/domain/domain.test.mjs": "46a5e35071ac48aaea7d0c1a8321e459f2bcdce7c8f356ec2f6f6de88f5e5456",
+    "app/(workspaces)/partners/page.tsx": "b5a571ed32e5ad87f6da06e1cbfd2d691ecc4943c0de5e5c85891acd494f3560",
+    "docs/evidence/v2/domain-tests.txt": "9c1ad30a1e32b0a162f743a816cea4fa879b2b9767483bf1212fb8c9133efd03",
+    "docs/evidence/v2/browser-qa.md": "1c5bb5b555f04679cff8685fa651665676a4d50248c73f61cebde2b1c5e65d72",
+    "components/flowhome-v2/nav.tsx": "d1f9b809d3151169ae292481d1351426d98660f76433f74211b4b5ac17fc51a6",
+    "components/flowhome-v2/context.tsx": "2643dbe502a9528944b3fdba82b52698de168bca47e1454ba5eb901809f6c909",
+    "app/(workspaces)/layout.tsx": "7c162c7836e3850310fe2d8a0bef13a2ce875e61cf1c23d2c574d7ac93799dc6",
+    "docs/evidence/v2/navigation-hotfix.md": "ee7407a0266222172072fc5f07eb087255ef8977f27c70026b617c8ef5a6790b",
+    "workflow/reviews/release-v2/S1a.json": "c973f08387975d04c92fa3a0c385e7c46501edcea631e4ef508d33a1ddc45ded"
+  },
+  "evidence": "Partner route delta only replaces route Links with native anchors; fulfillment logic is unchanged and existing domain evidence hashes match the historical review. Independently inspected the frozen source delta and verified unchanged baseline input/evidence hashes. Reviewed root browser record in docs/evidence/v2/navigation-hotfix.md: home→live→ops→partners→lab→home, restored case, and immediate offer-selection→operations state retention; TypeScript and build reported passing. This reviewer did not operate a browser or rerun those checks. Historical full-flow/test evidence is retained, not represented as newly rerun. Original iPhone failure cause and device-specific repair remain unverified; document navigation intentionally resets page-local controls.",
+  "iterations": 4
+}

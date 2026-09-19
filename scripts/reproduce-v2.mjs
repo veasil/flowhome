@@ -1,0 +1,12 @@
+import {writeFileSync,readFileSync,mkdirSync} from 'node:fs';
+import {createHash} from 'node:crypto';
+import {runExperiment} from '../lib/flowhome-v2/engine/index.mjs';
+const hash=p=>createHash('sha256').update(readFileSync(p)).digest('hex');
+const files=['city-v2','world-v2','observed-v2','experiment-v2','index'].map(n=>`lib/flowhome-v2/engine/${n}.mjs`);
+const report=await runExperiment({},p=>{if(p.completed%40===0)console.log(`Completed ${p.completed}/${p.total}`)});
+report.metadata.sourceHashes=Object.fromEntries(files.map(p=>[p,hash(p)]));
+report.metadata.provenanceNote='Exact source bytes identified by SHA-256; release Git commit identifies this report together with its source, avoiding self-referential commit embedding.';
+writeFileSync('public/downloads/v2/experiment.json',JSON.stringify(report,null,2));
+mkdirSync('docs/evidence/v2',{recursive:true});
+writeFileSync('docs/evidence/v2/experiment-config.json',JSON.stringify({seeds:report.config.seeds,scenarios:report.config.scenarios,changed:report.metadata.changedWithinPairs,fixed:report.metadata.heldFixedWithinPairs,config:report.config},null,2));
+console.log(JSON.stringify({runs:report.runs.length,reportSha256:hash('public/downloads/v2/experiment.json'),bridgeFailures:report.runs.filter(r=>Object.values(r.bridges).some(b=>b.residualMinor!==0)).length}));

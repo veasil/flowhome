@@ -1,0 +1,2 @@
+export const money=(n:number)=>'¥'+(n/100).toLocaleString('zh-CN',{maximumFractionDigits:2});
+export const names:Record<string,string>={DRAFT:'等待选择方案',OFFER_SELECTED:'等待运营确认',COMMITTED:'承诺已生效',EXIT_REQUESTED:'等待取件检测',ASSET_AVAILABLE:'物品可被接手',INSPECTION_FAILED:'检测异常，回购责任保留',DELIVERED:'交接完成',AVAILABLE:'可预约',RESERVED:'已预约',SOLD:'已交付',PENDING:'待接单',ACCEPTED:'执行中',COMPLETED:'已完成',DECLINED:'已拒单',FAILED:'异常',CANCELLED:'已取消'};

@@ -1,0 +1,21 @@
+{
+  "status": "passed",
+  "checkCount": 15,
+  "checks": [
+    "F01 filter infeasible cheap asset before ranking",
+    "F02 search alternative provider",
+    "F06 injected worlds share actual observed/proposal prefix despite different hidden futures",
+    "mattress scope excludes secondhand matching and guarantees, allows new purchase",
+    "algorithm rejects future observations and hidden fields",
+    "prediction preserves feasible candidates and early windows",
+    "deterministic seed replay",
+    "F07 continuous arrivals through observation end",
+    "exit-only demand stop is explicit",
+    "F08 cash, reserve, book and accrued result reconcile",
+    "one asset cannot be delivered to multiple residents in same tick",
+    "zero recommendation uptake removes pair effect",
+    "zero guarantee uptake removes responsibility effect",
+    "no capacity has explicit unserved demand and unpaid costs",
+    "capacity stress retains responsibilities and reconciles"
+  ]
+}

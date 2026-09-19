@@ -1,0 +1,12 @@
+{
+  "schemaVersion": "0.1", "snapshotId": "fixture-f01-observed", "asOfTick": 0,
+  "clockVersion": "weekly-v1", "currency": "CNY", "moneyUnit": "minor",
+  "policyBundleRef": "fixture-policy-0.1",
+  "openDemand": [{"id":"d1","observedAtTick":0,"deadlineTick":3,"budgetMinor":100000}],
+  "publicInventory": [
+    {"id":"cheap-late","observedAtTick":0,"expectedAvailableTick":2,"priceMinor":50000,"deliveryTicks":2},
+    {"id":"costlier-ready","observedAtTick":0,"expectedAvailableTick":0,"priceMinor":60000,"deliveryTicks":2}
+  ],
+  "providerOffers": [{"id":"p1","observedAtTick":0,"validUntilTick":3,"capacity":1}],
+  "provenance": "synthetic_assumption"
+}

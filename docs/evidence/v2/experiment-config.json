@@ -1,0 +1,64 @@
+{
+  "seeds": [
+    101,
+    102,
+    103,
+    104,
+    105,
+    106,
+    107,
+    108,
+    109,
+    110
+  ],
+  "scenarios": [
+    "normal",
+    "demand",
+    "capacity"
+  ],
+  "changed": [
+    "prediction flag enables observed-demand opportunity-cost ranking"
+  ],
+  "fixed": [
+    "world and keyed random draws",
+    "service scope",
+    "capital",
+    "fees and buyback formula",
+    "feasibility filter",
+    "early reservation mechanism",
+    "provider/window fallback",
+    "recommendation uptake",
+    "guarantee uptake"
+  ],
+  "config": {
+    "seed": 42,
+    "strategy": "D",
+    "scenario": "normal",
+    "weeks": 104,
+    "predictionBias": 0,
+    "uptake": 0.7,
+    "guaranteeUptake": 0.45,
+    "capitalMinor": 6000000,
+    "capacityMultiplier": 1,
+    "tenureMonths": 12,
+    "initialAssets": 260,
+    "exitStopTick": 78,
+    "seeds": [
+      101,
+      102,
+      103,
+      104,
+      105,
+      106,
+      107,
+      108,
+      109,
+      110
+    ],
+    "scenarios": [
+      "normal",
+      "demand",
+      "capacity"
+    ]
+  }
+}

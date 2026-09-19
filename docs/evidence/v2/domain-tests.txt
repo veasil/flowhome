@@ -1,0 +1,26 @@
+✔ quote defaults, contract snapshot and later policy update do not rewrite it (2.818366ms)
+✔ mattress is a valid category but is unsupported by the default guarantee policy (0.439524ms)
+✔ an unsigned selected quote can be replaced, which requires a fresh selection (0.498673ms)
+✔ idempotent replay returns current state and cannot roll back later exit (0.603191ms)
+✔ commitment replay cannot double-hold the 58,000 fen reserve (0.42372ms)
+✔ stale version and denied role cannot write (0.153862ms)
+✔ failed confirmation is atomic when free cash cannot cover reserve (0.866709ms)
+✔ confirmation may use the exit fee received in the same atomic transaction (0.343108ms)
+✔ confirmation rechecks quote expiry (0.495778ms)
+✔ provider decline preserves contract and creates a replacement task (0.88734ms)
+✔ reservation cancellation releases asset and allows buyer to reserve again (1.471272ms)
+✔ inspection failure blocks resale and does not erase confirmed contract (0.647207ms)
+✔ a failed inspection reserves a fresh inspection amount before a later reinspection (1.348146ms)
+✔ a duplicate provider report source returns current state without a second payment (0.564152ms)
+✔ a party appealed against cannot resolve its own appeal (2.108504ms)
+✔ cash bridge, reserve release, expected versus actual and delivery flow reconcile (2.462228ms)
+✔ the appellant cannot resolve the same case by changing roles (0.326593ms)
+✔ a completed buyback cannot be exited again (0.543541ms)
+ℹ tests 18
+ℹ suites 0
+ℹ pass 18
+ℹ fail 0
+ℹ cancelled 0
+ℹ skipped 0
+ℹ todo 0
+ℹ duration_ms 93.654234

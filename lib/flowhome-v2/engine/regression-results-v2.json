@@ -1,0 +1,725 @@
+{
+  "status": "passed",
+  "checkCount": 15,
+  "checks": [
+    "F01 filter infeasible cheap asset before ranking",
+    "F02 search alternative provider",
+    "F06 injected worlds share actual observed/proposal prefix despite different hidden futures",
+    "mattress scope excludes secondhand matching and guarantees, allows new purchase",
+    "algorithm rejects future observations and hidden fields",
+    "prediction preserves feasible candidates and early windows",
+    "deterministic seed replay",
+    "F07 continuous arrivals through observation end",
+    "exit-only demand stop is explicit",
+    "F08 cash, reserve, book and accrued result reconcile",
+    "one asset cannot be delivered to multiple residents in same tick",
+    "zero recommendation uptake removes pair effect",
+    "zero guarantee uptake removes responsibility effect",
+    "no capacity has explicit unserved demand and unpaid costs",
+    "capacity stress retains responsibilities and reconciles"
+  ],
+  "defaultResults": [
+    {
+      "strategy": "A",
+      "summary": {
+        "cashMinor": 11349500,
+        "reservedMinor": 0,
+        "freeCashMinor": 11349500,
+        "inventoryBookMinor": 0,
+        "unpaidMinor": 0,
+        "resultMinor": 5349500,
+        "served": 868,
+        "due": 1148,
+        "rate": 0.7560975609756098,
+        "transfers": 429,
+        "newPurchases": 439,
+        "inventoryCount": 0,
+        "idleItemWeeks": 0,
+        "comparisonResultMinor": 4858500,
+        "comparisonIdleItemWeeks": 0,
+        "demandItems": 1176,
+        "consumerNetSpendMinor": 71623818,
+        "consumerAverageNetSpendMinor": 60904.607142857145,
+        "guaranteeCount": 0,
+        "guaranteedExitCount": 0,
+        "completedSelfSaleCount": 224,
+        "averageSelfSaleWaitWeeks": 4.928571428571429,
+        "latePickupItemWeeks": 0,
+        "terminalResponsibilities": {
+          "activeCommitmentCount": 0,
+          "guaranteedFuturePayoutMinor": 0,
+          "reservedPickupMinor": 0,
+          "pickupPendingCount": 0,
+          "scheduledUndeliveredCount": 18,
+          "openDemandCount": 5,
+          "selfSaleUnsoldCount": 80,
+          "platformInventoryAges": []
+        }
+      },
+      "bridges": {
+        "cash": {
+          "openingMinor": 6000000,
+          "inflowsMinor": 6389500,
+          "outflowsMinor": 1040000,
+          "closingMinor": 11349500,
+          "residualMinor": 0
+        },
+        "reserve": {
+          "openingMinor": 0,
+          "additionsMinor": 0,
+          "releasesMinor": 0,
+          "closingMinor": 0,
+          "residualMinor": 0
+        },
+        "inventory": {
+          "openingMinor": 0,
+          "additionsMinor": 0,
+          "costReleasedMinor": 0,
+          "closingMinor": 0,
+          "residualMinor": 0
+        },
+        "result": {
+          "revenueMinor": 6389500,
+          "expenseMinor": 1040000,
+          "resultMinor": 5349500,
+          "residualMinor": 0
+        }
+      }
+    },
+    {
+      "strategy": "B",
+      "summary": {
+        "cashMinor": 11343000,
+        "reservedMinor": 0,
+        "freeCashMinor": 11343000,
+        "inventoryBookMinor": 0,
+        "unpaidMinor": 0,
+        "resultMinor": 5343000,
+        "served": 867,
+        "due": 1148,
+        "rate": 0.7552264808362369,
+        "transfers": 429,
+        "newPurchases": 438,
+        "inventoryCount": 0,
+        "idleItemWeeks": 0,
+        "comparisonResultMinor": 4852000,
+        "comparisonIdleItemWeeks": 0,
+        "demandItems": 1176,
+        "consumerNetSpendMinor": 71533318,
+        "consumerAverageNetSpendMinor": 60827.651360544216,
+        "guaranteeCount": 0,
+        "guaranteedExitCount": 0,
+        "completedSelfSaleCount": 224,
+        "averageSelfSaleWaitWeeks": 4.897321428571429,
+        "latePickupItemWeeks": 0,
+        "terminalResponsibilities": {
+          "activeCommitmentCount": 0,
+          "guaranteedFuturePayoutMinor": 0,
+          "reservedPickupMinor": 0,
+          "pickupPendingCount": 0,
+          "scheduledUndeliveredCount": 18,
+          "openDemandCount": 5,
+          "selfSaleUnsoldCount": 80,
+          "platformInventoryAges": []
+        }
+      },
+      "bridges": {
+        "cash": {
+          "openingMinor": 6000000,
+          "inflowsMinor": 6383000,
+          "outflowsMinor": 1040000,
+          "closingMinor": 11343000,
+          "residualMinor": 0
+        },
+        "reserve": {
+          "openingMinor": 0,
+          "additionsMinor": 0,
+          "releasesMinor": 0,
+          "closingMinor": 0,
+          "residualMinor": 0
+        },
+        "inventory": {
+          "openingMinor": 0,
+          "additionsMinor": 0,
+          "costReleasedMinor": 0,
+          "closingMinor": 0,
+          "residualMinor": 0
+        },
+        "result": {
+          "revenueMinor": 6383000,
+          "expenseMinor": 1040000,
+          "resultMinor": 5343000,
+          "residualMinor": 0
+        }
+      }
+    },
+    {
+      "strategy": "C",
+      "summary": {
+        "cashMinor": 13761552,
+        "reservedMinor": 7460660,
+        "freeCashMinor": 6300892,
+        "inventoryBookMinor": 1003156,
+        "unpaidMinor": 0,
+        "resultMinor": 8764708,
+        "served": 868,
+        "due": 1148,
+        "rate": 0.7560975609756098,
+        "transfers": 429,
+        "newPurchases": 439,
+        "inventoryCount": 36,
+        "idleItemWeeks": 1022,
+        "comparisonResultMinor": 8057708,
+        "comparisonIdleItemWeeks": 1022,
+        "demandItems": 1176,
+        "consumerNetSpendMinor": 75140762,
+        "consumerAverageNetSpendMinor": 63895.20578231292,
+        "guaranteeCount": 322,
+        "guaranteedExitCount": 141,
+        "completedSelfSaleCount": 113,
+        "averageSelfSaleWaitWeeks": 5.053097345132743,
+        "latePickupItemWeeks": 0,
+        "terminalResponsibilities": {
+          "activeCommitmentCount": 181,
+          "guaranteedFuturePayoutMinor": 5288660,
+          "reservedPickupMinor": 2172000,
+          "pickupPendingCount": 0,
+          "scheduledUndeliveredCount": 18,
+          "openDemandCount": 5,
+          "selfSaleUnsoldCount": 44,
+          "platformInventoryAges": [
+            {
+              "assetId": "asset:resident-1-10",
+              "ageWeeks": 1,
+              "bookMinor": 38400,
+              "pickupPending": false
+            },
+            {
+              "assetId": "asset:resident-2-10",
+              "ageWeeks": 1,
+              "bookMinor": 22400,
+              "pickupPending": false
+            },
+            {
+              "assetId": "asset:resident-3-9",
+              "ageWeeks": 0,
+              "bookMinor": 22400,
+              "pickupPending": false
+            },
+            {
+              "assetId": "asset:resident-5-7",
+              "ageWeeks": 40,
+              "bookMinor": 22400,
+              "pickupPending": false
+            },
+            {
+              "assetId": "asset:resident-7-10",
+              "ageWeeks": 37,
+              "bookMinor": 22400,
+              "pickupPending": false
+            },
+            {
+              "assetId": "asset:resident-8-8",
+              "ageWeeks": 38,
+              "bookMinor": 22400,
+              "pickupPending": false
+            },
+            {
+              "assetId": "asset:resident-9-2",
+              "ageWeeks": 38,
+              "bookMinor": 22400,
+              "pickupPending": false
+            },
+            {
+              "assetId": "asset:resident-9-4",
+              "ageWeeks": 36,
+              "bookMinor": 22400,
+              "pickupPending": false
+            },
+            {
+              "assetId": "asset:resident-9-11",
+              "ageWeeks": 35,
+              "bookMinor": 38400,
+              "pickupPending": false
+            },
+            {
+              "assetId": "asset:resident-26-4",
+              "ageWeeks": 18,
+              "bookMinor": 22400,
+              "pickupPending": false
+            },
+            {
+              "assetId": "asset:resident-26-9",
+              "ageWeeks": 22,
+              "bookMinor": 22400,
+              "pickupPending": false
+            },
+            {
+              "assetId": "asset:resident-27-1",
+              "ageWeeks": 22,
+              "bookMinor": 22400,
+              "pickupPending": false
+            },
+            {
+              "assetId": "asset:resident-29-2",
+              "ageWeeks": 24,
+              "bookMinor": 22400,
+              "pickupPending": false
+            },
+            {
+              "assetId": "asset:resident-32-2",
+              "ageWeeks": 15,
+              "bookMinor": 22400,
+              "pickupPending": false
+            },
+            {
+              "assetId": "asset:resident-33-3",
+              "ageWeeks": 19,
+              "bookMinor": 22400,
+              "pickupPending": false
+            },
+            {
+              "assetId": "asset:resident-35-3",
+              "ageWeeks": 11,
+              "bookMinor": 22400,
+              "pickupPending": false
+            },
+            {
+              "assetId": "asset:resident-35-8",
+              "ageWeeks": 16,
+              "bookMinor": 22400,
+              "pickupPending": false
+            },
+            {
+              "assetId": "asset:resident-38-13",
+              "ageWeeks": 15,
+              "bookMinor": 22400,
+              "pickupPending": false
+            },
+            {
+              "assetId": "asset:resident-38-14",
+              "ageWeeks": 18,
+              "bookMinor": 22400,
+              "pickupPending": false
+            },
+            {
+              "assetId": "asset:resident-39-11",
+              "ageWeeks": 8,
+              "bookMinor": 22400,
+              "pickupPending": false
+            },
+            {
+              "assetId": "asset:resident-43-6",
+              "ageWeeks": 1,
+              "bookMinor": 38400,
+              "pickupPending": false
+            },
+            {
+              "assetId": "asset:resident-44-2",
+              "ageWeeks": 0,
+              "bookMinor": 38400,
+              "pickupPending": false
+            },
+            {
+              "assetId": "asset:resident-44-6",
+              "ageWeeks": 2,
+              "bookMinor": 38400,
+              "pickupPending": false
+            },
+            {
+              "assetId": "asset:resident-44-10",
+              "ageWeeks": 8,
+              "bookMinor": 22400,
+              "pickupPending": false
+            },
+            {
+              "assetId": "asset:resident-44-11",
+              "ageWeeks": 10,
+              "bookMinor": 22400,
+              "pickupPending": false
+            },
+            {
+              "assetId": "initial-92",
+              "ageWeeks": 0,
+              "bookMinor": 28666,
+              "pickupPending": false
+            },
+            {
+              "assetId": "asset:resident-45-10",
+              "ageWeeks": 3,
+              "bookMinor": 38400,
+              "pickupPending": false
+            },
+            {
+              "assetId": "asset:resident-46-12",
+              "ageWeeks": 6,
+              "bookMinor": 22400,
+              "pickupPending": false
+            },
+            {
+              "assetId": "asset:resident-47-11",
+              "ageWeeks": 0,
+              "bookMinor": 38400,
+              "pickupPending": false
+            },
+            {
+              "assetId": "asset:resident-47-12",
+              "ageWeeks": 4,
+              "bookMinor": 38400,
+              "pickupPending": false
+            },
+            {
+              "assetId": "asset:resident-47-14",
+              "ageWeeks": 1,
+              "bookMinor": 38400,
+              "pickupPending": false
+            },
+            {
+              "assetId": "initial-117",
+              "ageWeeks": 1,
+              "bookMinor": 20890,
+              "pickupPending": false
+            },
+            {
+              "assetId": "asset:resident-48-6",
+              "ageWeeks": 6,
+              "bookMinor": 38400,
+              "pickupPending": false
+            },
+            {
+              "assetId": "asset:resident-48-14",
+              "ageWeeks": 6,
+              "bookMinor": 22400,
+              "pickupPending": false
+            },
+            {
+              "assetId": "asset:resident-49-0",
+              "ageWeeks": 3,
+              "bookMinor": 38400,
+              "pickupPending": false
+            },
+            {
+              "assetId": "asset:resident-51-7",
+              "ageWeeks": 0,
+              "bookMinor": 38400,
+              "pickupPending": false
+            }
+          ]
+        }
+      },
+      "bridges": {
+        "cash": {
+          "openingMinor": 6000000,
+          "inflowsMinor": 16560523,
+          "outflowsMinor": 8798971,
+          "closingMinor": 13761552,
+          "residualMinor": 0
+        },
+        "reserve": {
+          "openingMinor": 0,
+          "additionsMinor": 15110371,
+          "releasesMinor": 7649711,
+          "closingMinor": 7460660,
+          "residualMinor": 0
+        },
+        "inventory": {
+          "openingMinor": 0,
+          "additionsMinor": 5549711,
+          "costReleasedMinor": 4546555,
+          "closingMinor": 1003156,
+          "residualMinor": 0
+        },
+        "result": {
+          "revenueMinor": 16560523,
+          "expenseMinor": 7795815,
+          "resultMinor": 8764708,
+          "residualMinor": 0
+        }
+      }
+    },
+    {
+      "strategy": "D",
+      "summary": {
+        "cashMinor": 13754451,
+        "reservedMinor": 7454653,
+        "freeCashMinor": 6299798,
+        "inventoryBookMinor": 1003156,
+        "unpaidMinor": 0,
+        "resultMinor": 8757607,
+        "served": 867,
+        "due": 1148,
+        "rate": 0.7552264808362369,
+        "transfers": 429,
+        "newPurchases": 438,
+        "inventoryCount": 36,
+        "idleItemWeeks": 1023,
+        "comparisonResultMinor": 8050607,
+        "comparisonIdleItemWeeks": 1023,
+        "demandItems": 1176,
+        "consumerNetSpendMinor": 75050262,
+        "consumerAverageNetSpendMinor": 63818.25,
+        "guaranteeCount": 322,
+        "guaranteedExitCount": 141,
+        "completedSelfSaleCount": 113,
+        "averageSelfSaleWaitWeeks": 4.991150442477876,
+        "latePickupItemWeeks": 0,
+        "terminalResponsibilities": {
+          "activeCommitmentCount": 181,
+          "guaranteedFuturePayoutMinor": 5282653,
+          "reservedPickupMinor": 2172000,
+          "pickupPendingCount": 0,
+          "scheduledUndeliveredCount": 18,
+          "openDemandCount": 5,
+          "selfSaleUnsoldCount": 44,
+          "platformInventoryAges": [
+            {
+              "assetId": "asset:resident-1-10",
+              "ageWeeks": 1,
+              "bookMinor": 38400,
+              "pickupPending": false
+            },
+            {
+              "assetId": "asset:resident-2-10",
+              "ageWeeks": 1,
+              "bookMinor": 22400,
+              "pickupPending": false
+            },
+            {
+              "assetId": "asset:resident-3-9",
+              "ageWeeks": 0,
+              "bookMinor": 22400,
+              "pickupPending": false
+            },
+            {
+              "assetId": "asset:resident-5-7",
+              "ageWeeks": 40,
+              "bookMinor": 22400,
+              "pickupPending": false
+            },
+            {
+              "assetId": "asset:resident-7-10",
+              "ageWeeks": 37,
+              "bookMinor": 22400,
+              "pickupPending": false
+            },
+            {
+              "assetId": "asset:resident-8-8",
+              "ageWeeks": 38,
+              "bookMinor": 22400,
+              "pickupPending": false
+            },
+            {
+              "assetId": "asset:resident-9-2",
+              "ageWeeks": 38,
+              "bookMinor": 22400,
+              "pickupPending": false
+            },
+            {
+              "assetId": "asset:resident-9-4",
+              "ageWeeks": 36,
+              "bookMinor": 22400,
+              "pickupPending": false
+            },
+            {
+              "assetId": "asset:resident-9-11",
+              "ageWeeks": 35,
+              "bookMinor": 38400,
+              "pickupPending": false
+            },
+            {
+              "assetId": "asset:resident-26-4",
+              "ageWeeks": 18,
+              "bookMinor": 22400,
+              "pickupPending": false
+            },
+            {
+              "assetId": "asset:resident-26-9",
+              "ageWeeks": 22,
+              "bookMinor": 22400,
+              "pickupPending": false
+            },
+            {
+              "assetId": "asset:resident-27-1",
+              "ageWeeks": 22,
+              "bookMinor": 22400,
+              "pickupPending": false
+            },
+            {
+              "assetId": "asset:resident-29-2",
+              "ageWeeks": 24,
+              "bookMinor": 22400,
+              "pickupPending": false
+            },
+            {
+              "assetId": "asset:resident-32-2",
+              "ageWeeks": 15,
+              "bookMinor": 22400,
+              "pickupPending": false
+            },
+            {
+              "assetId": "asset:resident-33-3",
+              "ageWeeks": 19,
+              "bookMinor": 22400,
+              "pickupPending": false
+            },
+            {
+              "assetId": "asset:resident-35-3",
+              "ageWeeks": 11,
+              "bookMinor": 22400,
+              "pickupPending": false
+            },
+            {
+              "assetId": "asset:resident-35-8",
+              "ageWeeks": 16,
+              "bookMinor": 22400,
+              "pickupPending": false
+            },
+            {
+              "assetId": "asset:resident-38-13",
+              "ageWeeks": 15,
+              "bookMinor": 22400,
+              "pickupPending": false
+            },
+            {
+              "assetId": "asset:resident-38-14",
+              "ageWeeks": 18,
+              "bookMinor": 22400,
+              "pickupPending": false
+            },
+            {
+              "assetId": "asset:resident-39-11",
+              "ageWeeks": 8,
+              "bookMinor": 22400,
+              "pickupPending": false
+            },
+            {
+              "assetId": "asset:resident-43-6",
+              "ageWeeks": 1,
+              "bookMinor": 38400,
+              "pickupPending": false
+            },
+            {
+              "assetId": "asset:resident-44-2",
+              "ageWeeks": 0,
+              "bookMinor": 38400,
+              "pickupPending": false
+            },
+            {
+              "assetId": "asset:resident-44-6",
+              "ageWeeks": 2,
+              "bookMinor": 38400,
+              "pickupPending": false
+            },
+            {
+              "assetId": "asset:resident-44-10",
+              "ageWeeks": 8,
+              "bookMinor": 22400,
+              "pickupPending": false
+            },
+            {
+              "assetId": "asset:resident-44-11",
+              "ageWeeks": 10,
+              "bookMinor": 22400,
+              "pickupPending": false
+            },
+            {
+              "assetId": "initial-92",
+              "ageWeeks": 0,
+              "bookMinor": 28666,
+              "pickupPending": false
+            },
+            {
+              "assetId": "asset:resident-45-10",
+              "ageWeeks": 3,
+              "bookMinor": 38400,
+              "pickupPending": false
+            },
+            {
+              "assetId": "asset:resident-46-12",
+              "ageWeeks": 6,
+              "bookMinor": 22400,
+              "pickupPending": false
+            },
+            {
+              "assetId": "asset:resident-47-11",
+              "ageWeeks": 0,
+              "bookMinor": 38400,
+              "pickupPending": false
+            },
+            {
+              "assetId": "asset:resident-47-12",
+              "ageWeeks": 4,
+              "bookMinor": 38400,
+              "pickupPending": false
+            },
+            {
+              "assetId": "asset:resident-47-14",
+              "ageWeeks": 1,
+              "bookMinor": 38400,
+              "pickupPending": false
+            },
+            {
+              "assetId": "initial-117",
+              "ageWeeks": 1,
+              "bookMinor": 20890,
+              "pickupPending": false
+            },
+            {
+              "assetId": "asset:resident-48-6",
+              "ageWeeks": 6,
+              "bookMinor": 38400,
+              "pickupPending": false
+            },
+            {
+              "assetId": "asset:resident-48-14",
+              "ageWeeks": 6,
+              "bookMinor": 22400,
+              "pickupPending": false
+            },
+            {
+              "assetId": "asset:resident-49-0",
+              "ageWeeks": 3,
+              "bookMinor": 38400,
+              "pickupPending": false
+            },
+            {
+              "assetId": "asset:resident-51-7",
+              "ageWeeks": 0,
+              "bookMinor": 38400,
+              "pickupPending": false
+            }
+          ]
+        }
+      },
+      "bridges": {
+        "cash": {
+          "openingMinor": 6000000,
+          "inflowsMinor": 16551498,
+          "outflowsMinor": 8797047,
+          "closingMinor": 13754451,
+          "residualMinor": 0
+        },
+        "reserve": {
+          "openingMinor": 0,
+          "additionsMinor": 15102260,
+          "releasesMinor": 7647607,
+          "closingMinor": 7454653,
+          "residualMinor": 0
+        },
+        "inventory": {
+          "openingMinor": 0,
+          "additionsMinor": 5547607,
+          "costReleasedMinor": 4544451,
+          "closingMinor": 1003156,
+          "residualMinor": 0
+        },
+        "result": {
+          "revenueMinor": 16551498,
+          "expenseMinor": 7793891,
+          "resultMinor": 8757607,
+          "residualMinor": 0
+        }
+      }
+    }
+  ]
+}

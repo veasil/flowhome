@@ -1,0 +1,18 @@
+{
+  "taskId": "C0",
+  "reviewer": "v2_agent_workflow",
+  "agentTask": "/root/v2_agent_workflow",
+  "decision": "accept",
+  "reviewedAt": "2026-09-18T18:33:31.940617+00:00",
+  "scope": "static workflow and architecture design; no v2 runtime acceptance",
+  "inputHashes": {
+    "docs/architecture/v2-contracts.md": "5db6ed6313ffa82ffcd82760bce4505993fd5291b1eca398132c28c48d44f621",
+    "docs/architecture/v2-system.md": "21b0d7748d7a5168f22e1527bf327fee4c6125d17f7f391894460303c2f43224",
+    "docs/versions/v2-plan.md": "73e7a89b7d927f5cb95afe1d5fd5de02e004696da0a81663fda349fef63ded50",
+    "docs/workflow/protocol.md": "b3e5f530f0ddd1ef154cb6a5686daf5c2e009bd4d5adc1bfcdef3e09ff94fe1a",
+    "scripts/check-v2-workflow.mjs": "9dccf958abf2cc4b977355d48f2f64c935325efad23f356d14946565d6b6e09f",
+    "tests/workflow.test.mjs": "a009b0782ad41fabec3c237d2d63916bc4a02a9129ef57b1a3bc5a20e668ad83"
+  },
+  "evidence": "Independent rerun: 17/17 workflow tests; real pending C0 correctly kept ready queue empty before acceptance.",
+  "iterations": 3
+}

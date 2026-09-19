@@ -1,0 +1,19 @@
+{
+  "taskId": "G1a",
+  "reviewer": "v2_independent_qa",
+  "agentTask": "/root/v2_independent_qa",
+  "decision": "accept",
+  "reviewedAt": "2026-09-18T19:11:22.167Z",
+  "scope": "Policy snapshot and simulated appeal-recusal behavior only; no member authorization, quorum, voting, legal governance, or production identity.",
+  "inputHashes": {
+    "public/downloads/v2/guide.md": "94131161ee1a03d736a03fb5de43ef3cb149ba7a626c68bac2f4b6ee6956b363",
+    "docs/workflow/implementation-scope.md": "f1d17a7e0247efca6046de0b864309647f33e6aed6072deff71d1d10bcdd3cb8",
+    "lib/flowhome-v2/domain/policy.mjs": "ed5c00ee8957bb2f5f9a872517a221efe74acaa9657be83b15c40f6a67376fd0",
+    "lib/flowhome-v2/domain/domain.mjs": "be5987f1a299bd38cac41cf68e281d8c21902d4f7e6a4efb76594702f2ee777b",
+    "lib/flowhome-v2/domain/domain.test.mjs": "46a5e35071ac48aaea7d0c1a8321e459f2bcdce7c8f356ec2f6f6de88f5e5456",
+    "app/(workspaces)/ops/page.tsx": "6dfd9a31a2821af90deb6eee3adfb5346fb978e9950a6dfbfe577d6fdc8f60a0",
+    "docs/evidence/v2/domain-tests.txt": "9c1ad30a1e32b0a162f743a816cea4fa879b2b9767483bf1212fb8c9133efd03"
+  },
+  "evidence": "Accepted after independent 18/18 rerun and adversarial multi-role check: signed contract snapshots survive later policy versions; both the appealed-against party and the appellant are barred from resolving that appeal; UI states that real organizational voting is absent.",
+  "iterations": 3
+}
